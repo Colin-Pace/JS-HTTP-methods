@@ -27,13 +27,15 @@ h1, form {
 
 button {
   padding: 14px;
-  margin-top: 20px;
+  margin-right: 40px;
   font-size: 30px;
   border-color: gray;
 }
 
 .buttons {
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   margin-top: 100px;
 }
 
