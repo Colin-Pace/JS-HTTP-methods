@@ -1,0 +1,44 @@
+* {
+  background-color: #0e4d92;
+  color: lime;
+  font-family: arial;
+}
+
+.centerElements {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+input {
+  display: none;
+  margin-top: 100px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 30px;
+  background: white;
+  color: black;
+}
+
+h1, form {
+  text-align: center;
+}
+
+button {
+  padding: 14px;
+  margin-top: 20px;
+  font-size: 30px;
+  border-color: gray;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 100px;
+}
+
+#name-list {
+  display: none;
+  list-style-type: square;
+  font-size: 24px;
+}
