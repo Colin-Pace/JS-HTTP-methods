@@ -1,0 +1,36 @@
+Client
+1. Event listeners
+
+2. Functions with fetch
+    1. Place data in an object
+    2. Create an options object
+        1. method: 'PROTOCOL',
+        2. body: JSON.stringify(postbody)
+        3. headers: { "Content-Type": "application/json" }
+    3. fetch(url, options); fetch has action and check
+        1. .then( response => {} )
+              1. Is response.ok ?
+        2. .catch( error => {} )
+
+
+Server
+1. Imports and setup
+    1. Requirements: express, cors, knex
+    2. Invocations: express, Router
+    3. Port assignment
+    4. knexInstance declaration
+          1. client: 'pg',
+          2. connection: 'postgresql://username@localhost/dbname'
+    5. Use: cors, express.json, router
+
+2. Endpoints: route, method, variable, instance; instance has action and check
+    1. Router
+        .route('')
+            .method((req, res) => {} )
+                1. Variable assignment from req.body property
+                2. knexInstance('table')
+                    .crud()
+                    .then( result => {} )
+                        1. Result check
+
+3. Port listener
