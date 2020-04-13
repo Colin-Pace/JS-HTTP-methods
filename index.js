@@ -11,19 +11,19 @@ document.getElementById('enter').addEventListener('click', function(e) {
 // Send name to server
 document.getElementById('inputForm').addEventListener('submit', function(e) {
 
+  e.preventDefault();
+
   const name = document.getElementById('name').value;
 
   document.getElementById('name').value = '';
 
   sendItem(name);
 
-  e.preventDefault();
-
 });
 
 function sendItem(name) {
 
-  let postBody = {'item': name};
+  let postBody = { 'item': name };
 
   const options = {
 
@@ -36,26 +36,33 @@ function sendItem(name) {
         "Content-Type": "application/json"
 
       }
-
   };
 
   fetch('http://localhost:8000/', options)
 
-    .then((response) => {
+    .then( response => {
 
-      return response.json();
+      if (response.ok) {
+
+        console.log(response);
+
+      } else {
+
+        throw new Error('An error occured.')
+
+      }
 
     })
 
-    .then((data) => {
+    .catch( error => {
 
-      console.log(data);
+      console.log(error);
 
-    });
+    })
 }
 
 
-// Retrieve input
+// Retrieve names
 document.getElementById('retrieve').addEventListener('click', function(e) {
 
   document.getElementById('name').style.display = "none";
@@ -75,22 +82,35 @@ function retrieve() {
         "Content-Type": "application/json"
 
       }
-
   };
 
   fetch('http://localhost:8000/', options)
 
-    .then((response) => {
+    .then( response => {
 
-      return response.json();
+      if (response.ok) {
+
+        return response.json();
+
+      } else {
+
+        throw new Error('An error occured');
+
+      }
 
     })
 
-    .then((data) => {
+    .then( data => {
 
       display(data);
 
-    });
+    })
+
+    .catch( error => {
+
+      console.log(error);
+
+    })
 }
 
 function display(data) {
@@ -119,7 +139,7 @@ function display(data) {
 }
 
 
-// Clear
+// Clear names
 document.getElementById('clear').addEventListener('click', function(e) {
 
   document.getElementById('name-list').style.display = "none";
@@ -133,21 +153,20 @@ document.getElementById('clear').addEventListener('click', function(e) {
         "Content-Type": "application/json"
 
       }
-
   };
 
   fetch('http://localhost:8000/del/', options)
 
-    .then((response) => {
+    .then( response => {
 
-      return response.json();
+      if (!response.ok) {
 
+        throw new Error('An error occured.');
+
+      } else {
+
+        console.log(response);
+
+      }
     })
-
-    .then((data) => {
-
-      display(data);
-
-    });
-
 })
