@@ -7,13 +7,13 @@ const Container = function() {
 
   let nameInput = document.getElementById('name');
 
-  let name = document.getElementById('name').value;
-
   let retrieveButton = document.getElementById('retrieve');
 
   let clear = document.getElementById('clear');
 
   let list = document.getElementById('name-list');
+
+  let name;
 
 
   // Methods
