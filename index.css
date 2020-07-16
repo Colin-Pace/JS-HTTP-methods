@@ -116,12 +116,16 @@ button:focus {
 }
 
 @media screen and (max-width: 680px) {
-  input {
+  input, {
     max-width: 40%;
   }
 
-  #inputAndButton {
-    justify-content: center;
+  .buttons {
+    max-width: 90%;
+    padding: 20px;
   }
 
+  #inputForm {
+    max-width: 80%;
+  }
 }
