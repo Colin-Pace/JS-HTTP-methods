@@ -1,7 +1,14 @@
 * {
-  background-color: #0e4d92;
-  color: lime;
-  font-family: arial;
+  font-family: arial, sans-serif;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+}
+
+body h1 {
+  margin-top: 70px;
 }
 
 .centerElements {
@@ -12,24 +19,51 @@
 
 input {
   display: none;
-  margin-top: 100px;
-  padding-left: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-size: 30px;
-  background: white;
-  color: black;
+  margin-top: 3px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  height: 44px;
+  width: 535px;
+  padding-left: 20px;
 }
 
-h1, form {
+input:focus {
+  outline: none;
+  box-shadow: 1px 1px 5px 1px lightgray;
+}
+
+h1, h3 {
   text-align: center;
 }
 
+h3 {
+  margin-top: 50px;
+}
+
+#inputAndButton {
+  display: flex;
+  align-items: center;
+}
+
 button {
-  padding: 14px;
-  margin-right: 40px;
-  font-size: 30px;
-  border-color: gray;
+  height: 50px;
+  width: 100px;
+  background-color: white;
+  color: #000000;
+  border-radius: 4px;
+  border-style: solid;
+  border: 1px solid gray;
+}
+
+button:hover {
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px 1px lightgray;
+}
+
+button:focus {
+  border-color: blue;
+  border-radius: 4px;
+  outline: none;
 }
 
 .buttons {
@@ -39,8 +73,24 @@ button {
   margin-top: 100px;
 }
 
+#submitButton {
+  display: none;
+  height: 40px;
+  width: 100px;
+  margin-left: 20px;
+}
+
+#enter {
+  margin-right: 35px;
+}
+
+#clear {
+  margin-left: 35px;
+}
+
 #name-list {
   display: none;
   list-style-type: square;
-  font-size: 24px;
+  font-size: 20px;
+
 }

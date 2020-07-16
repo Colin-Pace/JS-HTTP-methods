@@ -19,8 +19,6 @@ const Container = function() {
   // Methods
   function sendItem(name) {
 
-    console.log(name);
-
     let postBody = { 'item': name };
 
     const options = {
@@ -167,6 +165,10 @@ const Container = function() {
 
     nameInput.style.display = "block";
 
+    document.getElementById('inputForm').style.display = "block";
+
+    document.getElementById('submitButton').style.display = "block";
+
   });
 
   form.addEventListener('submit', function(e) {
@@ -183,6 +185,8 @@ const Container = function() {
 
   retrieveButton.addEventListener('click', function(e) {
 
+    document.getElementById('submitButton').style.display = "none";
+
     nameInput.style.display = "none";
 
     retrieve();
@@ -190,6 +194,10 @@ const Container = function() {
   });
 
   clear.addEventListener('click', function(e) {
+
+    document.getElementById('inputForm').style.display = "none";
+
+    document.getElementById('submitButton').style.display = "none";
 
     list.style.display = "none";
 

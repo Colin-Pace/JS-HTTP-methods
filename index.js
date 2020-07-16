@@ -4,7 +4,7 @@ document.getElementById('enter').addEventListener('click', function(e) {
   document.getElementById('name-list').style.display = "none";
 
   document.getElementById('name').style.display = "block";
-
+  
 });
 
 
