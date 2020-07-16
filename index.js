@@ -4,7 +4,7 @@ document.getElementById('enter').addEventListener('click', function(e) {
   document.getElementById('name-list').style.display = "none";
 
   document.getElementById('name').style.display = "block";
-  
+
 });
 
 
@@ -125,9 +125,11 @@ function display(data) {
 
   }
 
-  for (let i = 0; i < data.length; i++) {
+  const l = data.length;
 
-    let node = document.createElement('LI');
+  for (let i = 0; i < l; i++) {
+
+    let node = document.createElement('li');
 
     let textnode = document.createTextNode(`${data[i]}`);
 

@@ -19,6 +19,8 @@ const Container = function() {
   // Methods
   function sendItem(name) {
 
+    if (!name) return;
+
     let postBody = { 'item': name };
 
     const options = {
@@ -109,9 +111,13 @@ const Container = function() {
 
     }
 
-    for (let i = 0; i < data.length; i++) {
+    const l = data.length;
 
-      let node = document.createElement('LI');
+    for (let i = 0; i < l; i++) {
+
+      let node = document.createElement('li');
+
+      node.setAttribute('class', 'listItem');
 
       let textnode = document.createTextNode(`${data[i]}`);
 
